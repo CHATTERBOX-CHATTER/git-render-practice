@@ -21,7 +21,7 @@ load_dotenv(ENV_PATH)
 
 REACT_HOST = os.getenv('REACT_HOST', "react-server")
 
-if REACT_HOST.startwith('http'):
+if REACT_HOST.startswith('http'):
     #http://localhost:3000 or 5173
     ORIGIN = REACT_HOST
 else:
