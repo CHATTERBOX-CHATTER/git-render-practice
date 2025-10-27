@@ -41,9 +41,10 @@ app.add_middleware(
 # 테이블 생성
 create_tables()
 
-@app.get('/')
+@app.api_route("/", methods=["GET", "HEAD"])
 def home():
-    return {'message': 'Post API Server'}
+    return {"message": "Post API Server"}
+
 
 @app.post('/posts', response_model=PostResponse)
 def create_post(post: PostCreate, db: Session = Depends(get_db)):
