@@ -15,7 +15,7 @@ const getAPIBaseURL = () => {
     //http://{hostname}.onrender.com
     //http://fastpai-ddddd.onrender.com
     // 이것이 리턴되면 App.jsx에서 배포된 fastapi 서버로 요청할 수 있음
-    return `http://${fastApiHost}.onrender.com`;
+    return `https://${fastApiHost}.onrender.com`;
     
 }
 
