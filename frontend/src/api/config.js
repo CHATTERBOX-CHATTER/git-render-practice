@@ -1,0 +1,22 @@
+//배포 버전의 fastapi 주소 또는 로컬 fastapi주소를 받아오는 함수
+
+const getAPIBaseURL = () => {
+    // ENDpoint 직전 주소 (Base URL)
+
+    //render 배포할 때 환경 변수에 접근하면 HOST 이름만 리턴한다
+    const fastApiHost = import.meta.env.VITE_FASTAPI_HOST;
+
+    if (fastApiHost.startsWith('http')){
+        // 로컬 환경 ex) http://localhost:8000
+        return fastApiHost;
+    }
+
+    //render의 web service의 도메인은
+    //http://{hostname}.onrender.com
+    //http://fastpai-ddddd.onrender.com
+    // 이것이 리턴되면 App.jsx에서 배포된 fastapi 서버로 요청할 수 있음
+    return `http://${fastApiHost}.onrender.com`;
+    
+}
+
+export const API_BASE_URL =  getAPIBaseURL();
