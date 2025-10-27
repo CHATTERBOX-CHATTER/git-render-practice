@@ -8,7 +8,7 @@ function App() {
   const [editingId, setEditingId] = useState(null)
   const [editingData, setEditingData] = useState({})
 
-// Fastapi 요청 주소 배포 했을 때 Fastapi 도메인 주소가 올 수 있도록
+  // Fastapi 요청 주소 배포 했을 때 Fastapi 도메인 주소가 올 수 있도록
 
   useEffect(() => {
     fetchPosts()
